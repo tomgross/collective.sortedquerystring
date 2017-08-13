@@ -1,0 +1,5 @@
+====================
+collective.sortedquerystring
+====================
+
+User documentation
