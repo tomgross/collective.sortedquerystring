@@ -1,4 +1,33 @@
 <?xml version="1.0"?>
 <registry>
+<records prefix="plone.resources/sortablequerystring"
+          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+  <value key="js">++plone++collective.sortablequerystring/sortablequerystring/pattern.js</value>
+</records>
+  <records prefix="plone.resources/bundle-sortablequerystring"
+          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+  <value key="js">++plone++collective.sortablequerystring/bundle.js</value>
+  <value key="css">
+    <element>++plone++collective.sortablequerystring/sortablequerystring/pattern.less</element>
+  </value>
+</records>
+  <records prefix="plone.bundles/sortablequerystring"
+          interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+  <value key="resources">
+    <!-- reference to bundle resource definition -->
+    <element>bundle-sortablequerystring</element>
+  </value>
+  <value key="merge_with">default</value>
+  <value key="enabled">True</value>
+  <value key="jscompilation">++plone++exercise6/sortablequerystring-compiled.min.js</value>
+  <value key="csscompilation">++plone++exercise6/sortablequerystring-compiled.css</value>
+  <value key="last_compilation">2016-10-04 00:00:00</value>
 
+  <!-- so we don't include these modules multiple times -->
+  <value key="stub_js_modules">
+    <element>jquery</element>
+    <element>mockup-patterns-querystring</element>
+    <element>mockup-patterns-sortable</element>
+  </value>
+</records>
 </registry>
