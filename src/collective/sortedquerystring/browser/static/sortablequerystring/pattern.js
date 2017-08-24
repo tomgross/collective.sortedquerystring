@@ -11,6 +11,11 @@ define([
     parser: 'mockup',
     defaults: {
     },
+      init: function() {
+      var that = this;
+      that.$el.append(' <span>Exercise 6 was here</span>');
+    }
+    /*
     refreshPreviewEvent: function(value) {
       var self = this;
 
@@ -59,6 +64,7 @@ define([
             console.log('hi');
           });
     },
+    */
   });
 
   return SortableQueryString;

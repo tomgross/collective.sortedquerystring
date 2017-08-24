@@ -19,9 +19,9 @@
   </value>
   <value key="merge_with">default</value>
   <value key="enabled">True</value>
-  <value key="jscompilation">++plone++exercise6/sortablequerystring-compiled.min.js</value>
-  <value key="csscompilation">++plone++exercise6/sortablequerystring-compiled.css</value>
-  <value key="last_compilation">2016-10-04 00:00:00</value>
+  <value key="jscompilation">++plone++sortablequerystring/sortablequerystring-compiled.min.js</value>
+  <value key="csscompilation">++plone++sortablequerystring/sortablequerystring-compiled.css</value>
+  <value key="last_compilation">2017-08-14 00:00:00</value>
 
   <!-- so we don't include these modules multiple times -->
   <value key="stub_js_modules">

@@ -15,6 +15,7 @@ lib/
 local/
 parts/
 src/*
+node_modules/
 test.plone_addon/
 var/
 # files
@@ -23,8 +24,10 @@ var/
 lib64
 log.html
 output.xml
+package.json
 pip-selfcheck.json
 report.html
+temp_resources/
 # excludes
 !.coveragerc
 !.editorconfig
