@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <registry>
-<records prefix="plone.resources/sortablequerystring"
+<records prefix="plone.resources/collective.sortablequerystring"
           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
   <value key="js">++plone++collective.sortablequerystring/sortablequerystring/pattern.js</value>
 </records>
-  <records prefix="plone.resources/bundle-sortablequerystring"
+  <records prefix="plone.resources/bundle-collective.sortablequerystring"
           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
   <value key="js">++plone++collective.sortablequerystring/bundle.js</value>
   <value key="css">
@@ -19,8 +19,8 @@
   </value>
   <value key="merge_with">default</value>
   <value key="enabled">True</value>
-  <value key="jscompilation">++plone++sortablequerystring/sortablequerystring-compiled.min.js</value>
-  <value key="csscompilation">++plone++sortablequerystring/sortablequerystring-compiled.css</value>
+  <value key="jscompilation">++plone++collective.sortablequerystring/sortablequerystring-compiled.min.js</value>
+  <value key="csscompilation">++plone++collective.sortablequerystring/sortablequerystring-compiled.css</value>
   <value key="last_compilation">2017-08-14 00:00:00</value>
 
   <!-- so we don't include these modules multiple times -->

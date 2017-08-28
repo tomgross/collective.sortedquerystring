@@ -1,5 +1,5 @@
 require([
-  'sortedquerystring'
+  'sortablequerystring'
 ], function() {
   'use strict';
 });

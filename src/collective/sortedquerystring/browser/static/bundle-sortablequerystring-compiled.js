@@ -38,7 +38,7 @@
  *
  */
 
-define([
+define('sortablequerystring',[
   'jquery',
   'mockup-patterns-querystring',
   'mockup-patterns-sortable'
@@ -109,3 +109,12 @@ define([
 
   return SortableQueryString;
 });
+
+require([
+  'sortablequerystring'
+], function() {
+  'use strict';
+});
+
+define("/home/vagrant/collective.sortedquerystring/src/collective/sortedquerystring/browser/static/bundle.js", function(){});
+
