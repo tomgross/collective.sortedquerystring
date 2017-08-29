@@ -48,13 +48,7 @@ define([
   var SortableQueryString = QueryString.extend({
     name: 'sortablequerystring',
     trigger: '.pat-sortablequerystring',
-    parser: 'mockup'
-    /* defaults: {
-    },
-      init: function() {
-      var that = this;
-      that.$el.append(' <span>Exercise 6 was here</span>');
-    }
+    parser: 'mockup',
 
     refreshPreviewEvent: function(value) {
       var self = this;
@@ -101,10 +95,12 @@ define([
               .addClass(self.options.classPreviewResultsWrapperName)
               .html(data)
               .appendTo(self.$previewPane);
-            console.log('hi');
+            console.log('hi' + self.options.previewURL);
+      //      var dd = new Sortable(self.$('#search-results'), {
+      //         selector: 'li'
+      //      });
           });
     },
-    */
   });
 
   return SortableQueryString;

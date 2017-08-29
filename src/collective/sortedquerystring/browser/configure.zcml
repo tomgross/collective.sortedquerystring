@@ -11,4 +11,20 @@
       directory="static"
       />
 
+    <browser:page
+    name="sortable_querybuilder_html_results"
+    class=".querybuilder.QueryBuilder"
+    permission="zope2.View"
+    attribute="html_results"
+    for="*"
+    />
+
+    <browser:page
+    name="sortable_query_results"
+    class="plone.app.querystring.querybuilder.ContentListingView"
+    permission="zope2.View"
+    for="*"
+    template="results.pt"
+    />
+
 </configure>
