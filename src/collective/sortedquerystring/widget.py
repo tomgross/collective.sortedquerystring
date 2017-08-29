@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 from plone.app.z3cform.widget import IQueryStringWidget
 from plone.app.z3cform.widget import QueryStringWidget
+from zope.interface import implementer
 from zope.interface import implementer_only
+from z3c.form.interfaces import IFieldWidget
+from z3c.form.widget import FieldWidget
+
 
 __author__ = 'Tom Gross <itconsense@gmail.com>'
 
@@ -38,5 +42,13 @@ class SortableQueryStringWidget(QueryStringWidget):
                 'sortable_querybuilder_html_results', 1
             )
         return args
+
+
+@implementer(IFieldWidget)
+def SortableQueryStringFieldWidget(field, request, extra=None):
+    if extra is not None:
+        request = extra
+    return FieldWidget(field, SortableQueryStringWidget(request))
+
 
 # EOF
