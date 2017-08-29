@@ -31,7 +31,7 @@ class TestView(unittest.TestCase):
     def test_html_query_result_noresults(self):
         """Test rendering of sorted html query result."""
         self.assertIn(
-            '<strong id="search-results-number">0</strong> items matching your search terms.',
+            '<strong id="search-results-number">0</strong> items matching your search terms.',  # noqa
             self.view.html_results(self.query)
         )
 
@@ -42,5 +42,7 @@ class TestView(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager', ])
         doc1 = api.content.create(self.portal, 'Document', title='A doc')
         doc1.reindexObject()
-        print(self.view.html_results(self.query))
-
+        self.assertIn(
+            '<a href="http://nohost/plone/a-doc" class="state-private contenttype-document">A doc</a>', # noqa
+            self.view.html_results(self.query)
+        )
