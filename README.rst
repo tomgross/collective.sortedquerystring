@@ -2,37 +2,23 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-============================
-collective.sortedquerystring
-============================
+==============================
+collective.sortablequerystring
+==============================
 
-Tell me what your product does
+Provide a customized querystring widget, which allows sorting.
+
+Requirements: Plone 5.1
 
 Features
 --------
 
-- Can be bullet points
-
+- Can be used with collection behavior
+- Can be used with listing tile of plone.app.standardtiles
 
 Examples
 --------
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
 
 
 Installation
@@ -50,6 +36,17 @@ Install collective.sortedquerystring by adding it to your buildout::
 
 and then running ``bin/buildout``
 
+Development
+-----------
+
+Build mockup
+
+$ bin/plone-compile-resources^Cs Plone -b plone
+$ bin/plone-compile-resources^Cs Plone -b plone-logged-in
+
+Build resources
+
+$ bin/plone-compile-resources -s Plone -b sortablequerystring
 
 Contribute
 ----------

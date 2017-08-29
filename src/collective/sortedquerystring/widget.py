@@ -3,7 +3,6 @@ from plone.app.z3cform.widget import IQueryStringWidget
 from plone.app.z3cform.widget import QueryStringWidget
 from zope.interface import implementer_only
 
-
 __author__ = 'Tom Gross <itconsense@gmail.com>'
 
 

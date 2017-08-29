@@ -92,5 +92,13 @@
                 </tal:entry>
             </li>
         </ul>
+        <script type="text/javascript">
+              var updateSorting = function(el, pos){
+                  $.ajax({
+                  	url: '@@update-qs-ordering',
+                    data: {uid: , }})
+              };
+
+        </script>
     </div>
 </div>

@@ -97,7 +97,8 @@ define([
               .appendTo(self.$previewPane);
             console.log('hi' + self.options.previewURL);
             var dd = new Sortable($('#search-results'), {
-               selector: 'li'
+               selector: 'li',
+               drop: 'updateSorting'
             });
           });
     },
