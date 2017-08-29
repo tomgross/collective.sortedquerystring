@@ -37,3 +37,4 @@ temp_resources/
 !.travis.yml
 !src/collective
 .idea
+/Gruntfile.js

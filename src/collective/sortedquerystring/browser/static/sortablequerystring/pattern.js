@@ -96,9 +96,9 @@ define([
               .html(data)
               .appendTo(self.$previewPane);
             console.log('hi' + self.options.previewURL);
-      //      var dd = new Sortable(self.$('#search-results'), {
-      //         selector: 'li'
-      //      });
+            var dd = new Sortable($('#search-results'), {
+               selector: 'li'
+            });
           });
     },
   });

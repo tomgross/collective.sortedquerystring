@@ -25,7 +25,7 @@
         </p>
 
         <ul class="searchResults" tal:condition="limited_results">
-            <li repeat="item limited_results">
+            <li tal:repeat="item limited_results">
                 <tal:entry tal:define="author python:pas_member.info(item.Creator());
                 	                   item_state python:'state-'+item.review_state();
                 	                   item_type python:'contenttype-'+normalize(item.portal_type)">
