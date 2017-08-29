@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from zope.component import getMultiAdapter
 from plone.app.querystring.querybuilder import QueryBuilder as BaseQueryBilder
+from zope.component import getMultiAdapter
 
 
 class QueryBuilder(BaseQueryBilder):
