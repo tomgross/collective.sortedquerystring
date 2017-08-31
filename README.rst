@@ -41,8 +41,8 @@ Development
 
 Build mockup
 
-$ bin/plone-compile-resources^Cs Plone -b plone
-$ bin/plone-compile-resources^Cs Plone -b plone-logged-in
+$ bin/plone-compile-resources -s Plone -b plone
+$ bin/plone-compile-resources -s Plone -b plone-logged-in
 
 Build resources
 

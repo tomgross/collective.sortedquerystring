@@ -36,10 +36,12 @@ class SortableQueryStringWidget(QueryStringWidget):
         :rtype: dict
         """
         args = super(SortableQueryStringWidget, self)._base_args()
-        args['pattern_options']['previewURL'] = \
-            args['pattern_options']['previewURL'].replace(
+        previewURL = args['pattern_options']['previewURL']
+        if 'sortable' not in  previewURL:
+            args['pattern_options']['previewURL'] = previewURL.replace(
                 'querybuilder_html_results',
-                'sortable_querybuilder_html_results', 1
+                'sortable_querybuilder_html_results',
+                1
             )
         return args
 

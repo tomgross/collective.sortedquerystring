@@ -6,7 +6,7 @@
 
   <!-- Publish static files -->
   <plone:static
-      name="collective.sortablequerystring"
+      name="sortablequerystring"
       type="plone"
       directory="static"
       />
@@ -26,5 +26,18 @@
     for="*"
     template="results.pt"
     />
+
+<configure package="plone.app.contenttypes.browser">
+
+    <!-- VIEWS FOR COLLECTION ITEM -->
+  <browser:page
+      name="sorted_listing_view"
+      for="collective.sortedquerystring.behavior.ISortableCollection"
+      class="collective.sortedquerystring.browser.collection.SortableCollectionView"
+      template="templates/listing.pt"
+      permission="zope2.View"
+      />
+
+</configure>
 
 </configure>

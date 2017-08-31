@@ -25,7 +25,7 @@
         </p>
 
         <ul class="searchResults" tal:condition="limited_results">
-            <li tal:repeat="item limited_results">
+            <li tal:repeat="item limited_results" tal:attributes="data-uid item/UID">
                 <tal:entry tal:define="author python:pas_member.info(item.Creator());
                 	                   item_state python:'state-'+item.review_state();
                 	                   item_type python:'contenttype-'+normalize(item.portal_type)">
@@ -36,7 +36,8 @@
                        <a
                          href="#"
                          tal:attributes="href item/getURL;
-                                         class  string:$item_state $item_type"
+                                         class  string:$item_state $item_type;
+                                         data-uid item/UID"
                          tal:content="item/Title" />
 
                         <span class="documentByLine">
@@ -93,10 +94,12 @@
             </li>
         </ul>
         <script type="text/javascript">
-              var updateSorting = function(el, pos){
-                  $.ajax({
-                  	url: '@@update-qs-ordering',
-                    data: {uid: , }})
+              var updateSorting = function(el, shift){
+                  var uid = $(el).attr('data-uid');
+                  var uidList = $("#search-results li").map(function() {
+                        return $(this).data("uid");
+                  }).get();
+                 $( "textarea[name$='ISortableCollection.sorting']" ).val( uidList.join("\r\n"))
               };
 
         </script>

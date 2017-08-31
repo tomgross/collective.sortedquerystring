@@ -95,11 +95,18 @@ define([
               .addClass(self.options.classPreviewResultsWrapperName)
               .html(data)
               .appendTo(self.$previewPane);
-            console.log('hi' + self.options.previewURL);
+
+            var uidList = $("#search-results li").map(function() {
+              return $(this).data("uid");
+            }).get();
+            $( "textarea[name$='ISortableCollection.sorting']" ).val( uidList.join("\r\n"))
+
+
             var dd = new Sortable($('#search-results'), {
                selector: 'li',
                drop: 'updateSorting'
             });
+
           });
     },
   });

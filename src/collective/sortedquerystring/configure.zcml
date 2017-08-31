@@ -41,7 +41,7 @@
     provides=".behavior.ISortableCollection"
     factory=".behavior.SortableCollection"
     for="plone.dexterity.interfaces.IDexterityContent"
-    marker=".behavior.ISortableCollection"
+    marker="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
     />
 
 </configure>
