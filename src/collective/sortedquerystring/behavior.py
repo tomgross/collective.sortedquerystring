@@ -10,7 +10,7 @@ from zope.component import adapter
 from zope.interface import implementer_only
 from zope.interface import provider
 from plone.autoform.interfaces import IFormFieldProvider
-from plone.uuid.interfaces import IUUID
+from plone.batching import Batch
 
 
 @provider(IFormFieldProvider)
@@ -27,7 +27,6 @@ class ISortableCollection(ICollection):
         required=False,
     )
 
-
 @implementer_only(ISortableCollection)
 @adapter(IDexterityContent)
 class SortableCollection(Collection):
@@ -36,9 +35,19 @@ class SortableCollection(Collection):
     def results(self, batch=True, b_start=0, b_size=None,
                 sort_on=None, limit=None, brains=False,
                 custom_query=None):
-        results = super(SortableCollection, self).results(batch, b_start, b_size, sort_on, limit, brains, custom_query)
-
+        results = super(SortableCollection, self).results(
+            batch, b_start, b_size, sort_on, limit, brains, custom_query)
         positions = {j: i for i, j in enumerate(self.sorting)}
-        r = sorted(results, key=lambda brain: positions.get(IUUID(brain), 999))
-        print (r)
-        return r
+        results = sorted(
+            results, key=lambda item: positions.get(item.uuid(), 999))
+        if batch:
+            results = Batch(results, b_size, start=b_start)
+        return results
+
+    @property
+    def sorting(self):
+        return getattr(self.context, 'sorting', [])
+
+    @sorting.setter
+    def sorting(self, value):
+        self.context.sorting = value

@@ -8,5 +8,4 @@ class SortableCollectionView(CollectionView):
 
     @property
     def collection_behavior(self):
-        context = aq_inner(self.context)
-        return SortableCollection(context)
+        return SortableCollection(aq_inner(self.context))

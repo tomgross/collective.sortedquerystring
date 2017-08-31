@@ -44,4 +44,17 @@
     marker="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
     />
 
+    <include package="plone.app.standardtiles" />
+      <plone:tile
+        name="collective.sortablequerystring.contentlisting"
+        title="Sortable Content listing"
+        description='Display the results of a saved search of the site content with sorting support'
+        permission="zope2.View"
+        add_permission="cmf.ModifyPortalContent"
+        class=".tile.SortableContentListingTile"
+        schema=".tile.ISortableContentListingTile"
+        for="*"
+        />
+
+
 </configure>

@@ -99,7 +99,7 @@
                   var uidList = $("#search-results li").map(function() {
                         return $(this).data("uid");
                   }).get();
-                 $( "textarea[name$='ISortableCollection.sorting']" ).val( uidList.join("\r\n"))
+                 $( "textarea[name$='sorting']" ).val( uidList.join("\r\n"))
               };
 
         </script>
